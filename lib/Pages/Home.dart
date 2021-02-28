@@ -3,6 +3,7 @@ import 'package:pocket_tp/constants.dart';
 import 'package:pocket_tp/services/getAccount_service.dart';
 
 
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -15,6 +16,7 @@ class _HomeState extends State<Home>{
   TextEditingController _controllerActivationKey = TextEditingController();
   String dropdownValue = 'User';
 
+  GetAccountService _accntService = GetAccountService();
 
   @override
   Widget build(BuildContext context) {
@@ -93,8 +95,10 @@ class _HomeState extends State<Home>{
               child: Text("ACESSAR"),
               onPressed: (){
 
-                print('ABC');
-
+                _accntService.post_getAccount(
+                    _controllerDocNumber,
+                    _controllerAccntType,
+                    _controllerActivationKey);
               },
 
             ),

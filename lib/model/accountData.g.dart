@@ -1,0 +1,88 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'accountData.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
+  return AccountData(
+    isValid: json['isValid'] as String,
+    isActive: json['isActive'] as String,
+    accntName: json['accntName'] as String,
+    accntContactName: json['accntContactName'] as String,
+    accntEmail: json['accntEmail'] as String,
+    accntCellPhnNum: json['accntCellPhnNum'] as String,
+    accntMainPhNum: json['accntMainPhNum'] as String,
+    accntProfileId: json['accntProfileId'] as String,
+    accntId: json['accntId'] as String,
+    accntBusNum: json['accntBusNum'] as String,
+    countryDocNumber: json['countryDocNumber'] as String,
+    countryProfile: json['countryProfile'] as String,
+    REFFERED_BY_ACCOUNT_ID: json['REFFERED_BY_ACCOUNT_ID'] as String,
+    bankAccountNumber: json['bankAccountNumber'] as String,
+    bankAccountDigit: json['bankAccountDigit'] as String,
+    bankRoutingNumber: json['bankRoutingNumber'] as String,
+    bankCode: json['bankCode'] as String,
+    bankName: json['bankName'] as String,
+    currency: json['currency'] as String,
+    currencySymbol: json['currencySymbol'] as String,
+    docRequired: json['docRequired'] as String,
+    biRequired: json['biRequired'] as String,
+    authorization: json['authorization'] as String,
+    avaliableBalance: json['avaliableBalance'] as String,
+    address: json['address'] as String,
+    addressComplement: json['addressComplement'] as String,
+    addressNumber: json['addressNumber'] as String,
+    city: json['city'] as String,
+    state: json['state'] as String,
+    country: json['country'] as String,
+    neighborhood: json['neighborhood'] as String,
+    postalCode: json['postalCode'] as String,
+    birthDate: json['birthDate'] as String,
+    generalRecord: json['generalRecord'] as String,
+    accntType: json['accntType'] as String,
+    language: json['language'] as String,
+  );
+}
+
+Map<String, dynamic> _$AccountDataToJson(AccountData instance) =>
+    <String, dynamic>{
+      'isValid': instance.isValid,
+      'isActive': instance.isActive,
+      'accntName': instance.accntName,
+      'accntContactName': instance.accntContactName,
+      'accntEmail': instance.accntEmail,
+      'accntCellPhnNum': instance.accntCellPhnNum,
+      'accntMainPhNum': instance.accntMainPhNum,
+      'accntProfileId': instance.accntProfileId,
+      'accntId': instance.accntId,
+      'accntBusNum': instance.accntBusNum,
+      'countryDocNumber': instance.countryDocNumber,
+      'countryProfile': instance.countryProfile,
+      'REFFERED_BY_ACCOUNT_ID': instance.REFFERED_BY_ACCOUNT_ID,
+      'bankAccountNumber': instance.bankAccountNumber,
+      'bankAccountDigit': instance.bankAccountDigit,
+      'bankRoutingNumber': instance.bankRoutingNumber,
+      'bankCode': instance.bankCode,
+      'bankName': instance.bankName,
+      'currency': instance.currency,
+      'currencySymbol': instance.currencySymbol,
+      'docRequired': instance.docRequired,
+      'biRequired': instance.biRequired,
+      'authorization': instance.authorization,
+      'avaliableBalance': instance.avaliableBalance,
+      'address': instance.address,
+      'addressComplement': instance.addressComplement,
+      'addressNumber': instance.addressNumber,
+      'city': instance.city,
+      'state': instance.state,
+      'country': instance.country,
+      'neighborhood': instance.neighborhood,
+      'postalCode': instance.postalCode,
+      'birthDate': instance.birthDate,
+      'generalRecord': instance.generalRecord,
+      'accntType': instance.accntType,
+      'language': instance.language,
+    };
