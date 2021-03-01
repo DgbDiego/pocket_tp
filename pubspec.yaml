@@ -35,13 +35,24 @@ dependencies:
   path_provider: 1.5.1
   http: ^0.12.0
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   json_annotation: ^3.0.0
   json_serializable: ^3.2.3
   build_runner: ^1.7.1
+
+  flutter_launcher_icons: ^0.7.2+1
+
+flutter_icons:
+  android: true
+  image_path: "devAssets/pocket_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "devAssets/pocket_icon_adaptive.png"
+
+
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
