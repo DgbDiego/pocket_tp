@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pocket_tp/Pages/Consulta.dart';
 import 'package:pocket_tp/Pages/Home.dart';
 
 class RouteGenerator {
@@ -14,6 +15,10 @@ class RouteGenerator {
       case "/home":
         return MaterialPageRoute(
             builder: (_) => Home()
+        );
+      case "/consulta":
+        return MaterialPageRoute(
+            builder: (context) => Consulta()
         );
 
       default:

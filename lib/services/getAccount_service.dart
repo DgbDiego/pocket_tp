@@ -3,14 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:pocket_tp/constants.dart';
 import 'dart:io';
 import 'dart:convert';
+import 'package:http/http.dart';
 
 class GetAccountService{
-  Dio dio;
 
   GetAccountService(){
-    dio = Dio();
-    dio.options.baseUrl = URL_GetAccount;
-    dio.options.receiveTimeout = 60000;
+
   }
 
   Future<dynamic> post_getAccount(
@@ -19,19 +17,27 @@ class GetAccountService{
       @required activatationKey
       ) async {
 
+    HttpClient client = new HttpClient();
+    client.badCertificateCallback = ((X509Certificate cert, String host, int port) => true);
+
+
+    String url = URL_GetAccount
+        +'?DocNumber=${docNumber}'
+        +'&AccntType=${accntType}'
+        +'&ActivatationKey=${activatationKey}';
+
     try{
-      Response response = await dio.post(URL_GetAccount
-      +'?DocNumber=${docNumber}'
-      +'?AccntType=${accntType}'
-      +'?ActivatationKey=${activatationKey}'
-      ).catchError((e){
-        print('Erro ao sincronizar  \n\n $e');
-      });
-      if (response.statusCode == 200) {
-        return response.data;
-      } else {
-        return null;
-      }
+
+      HttpClientRequest request = await client.postUrl(Uri.parse(url));
+
+      request.headers.set('content-type', 'application/json');
+
+      HttpClientResponse response = await request.close();
+
+      String reply = await response.transform(utf8.decoder).join();
+
+      return reply;
+
     }
     catch (e){
       return null;

@@ -1,13 +1,21 @@
 import 'dart:async';
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:pocket_tp/model/accountData.dart';
 import 'package:rxdart/rxdart.dart';
 
-part 'account_event.dart';
-part 'account_state.dart';
 
 class AccountBloc implements BlocBase {
+
+  AccountBloc accountBloc = AccountBloc();
+
+  var _autoValidateController = BehaviorSubject<bool>.seeded(false);
+
+  Stream<bool> get outAutoValidate => _autoValidateController.stream;
+
+  Sink<bool> get inAutoValidate => _autoValidateController.sink;
+
   final _statusTela = BehaviorSubject<String>();
 
   Stream<String> get outStatusTela => _statusTela.stream;
@@ -25,6 +33,14 @@ class AccountBloc implements BlocBase {
   Stream<String> get outAccntNotFound => _accntNotFoundController.stream;
 
   Sink<String> get sinkAccntNotFound => _accntNotFoundController.sink;
+
+  final _dataController = BehaviorSubject<AccountData>();
+
+  Stream<AccountData> get  outData => _dataController.stream;
+
+  Sink<AccountData> get sinkData => _dataController.sink;
+
+
 
 
   @override
@@ -49,6 +65,21 @@ class AccountBloc implements BlocBase {
   @override
   void removeListener(void Function() listener) {
     // TODO: implement removeListener
+  }
+
+  Future<bool> salvarAccount() async {
+
+
+
+    accountBloc.salvarFormularioAccount();
+
+
+  }
+
+  void salvarFormularioAccount({@required formularioAccount}) async {
+    final AccountBloc blocAccount =
+        BlocProvider.tag('accountGlobal').getBloc<AccountBloc>();
+
   }
 
 
